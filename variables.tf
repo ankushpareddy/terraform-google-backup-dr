@@ -24,6 +24,11 @@ variable "vpc_host_project_id" {
   description = "Provide the VPC host project ID. In case of a non-shared (dedicated) VPC, this will be the  same as the backup/recovery appliance project ID. In case of shared VPC, this will be the project ID of the host VPC project."
 }
 
+variable "ms_project_id" {
+  type        = string
+  description = "Provide the project ID where you want the management server resides in."
+}
+
 variable "ba_name" {
   type        = string
   description = "Provide a name for the backup/recovery appliance. The name will be suffixed with four random characters."
@@ -68,7 +73,7 @@ variable "management_server_endpoint" {
 
 variable "boot_image" {
   type        = string
-  default     = "projects/backupdr-images/global/images/sky-11-0-11-323"
+  default     = "projects/backupdr-images/global/images/sky-11-0-12-320"
   description = "Provide the boot image for backup/recovery appliance.  Don’t modify this variable to update or upgrade the appliance version. You can upgrade the appliance only through the Backup and DR Service management console."
 }
 
